@@ -1,21 +1,24 @@
 #include "libft.h"
-#indlude "stdio.h"
+#include <stdio.h>
+
+#define KRED  "\x1B[31m"
+#define KGRN  "\x1B[32m"
 
 void    printERROR(char * msg)
 {
-    printf(“\033[0;31m”);
-    printf("[KO]/t%s",mgs);
+    printf("%s",KRED);
+    printf("[KO]\t%s\n",msg);
     printf("\033[0m");
 }
 void    printSucess(char * msg)
 {
-    printf(“\033[0;32m”);
-    printf("[OK]/t%s",mgs);
+    printf("%s",KGRN);
+    printf("[OK]\t%s\n",msg);
     printf("\033[0m");
 }
 
 void     lower_letter(){
-        if(!ft_isalpha(102))
+        if(ft_isalpha(102))
     {
         printSucess("lower_letter");
         return;
@@ -23,7 +26,7 @@ void     lower_letter(){
     printERROR("lower_letter");
 }
 void     upper_letter(){
-        if(!ft_isalpha(102))
+        if(ft_isalpha(102))
     {
         printSucess("upper_letter");
         return;
@@ -31,12 +34,12 @@ void     upper_letter(){
     printERROR("upper_letter");
 }
 void     non_digit_letter(){
-        if(ft_isalpha(102))
+        if(ft_isalpha(99))
     {
-        printSucess("non_digit_letter");
+        printERROR("non_digit_letter");
         return;
     }
-    printERROR("non_digit_letter");
+    printSucess("non_digit_letter");
 }
 
 int     main()

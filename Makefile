@@ -10,29 +10,30 @@
 #                                                                              #
 # **************************************************************************** #
 
-BIN			:= ./bin
-TEST_DIR	:= ./tests
-NAME		:= libft
+BIN			:= ./bin/
+TEST_DIR	:= ./tests/
+INCLUDE		:= ./
+NAME		:= libft.a
 SRC			:= $(wildcard *.c)
 OBJ			:= $(patsubst %.c,%.o,$(SRC))
-FLAGS		:= -Wall -Wextra -Werror
+FLAGS		:= -Wall -Wextra -Werror -std=c99
 .PHONY		:  all clean fclean re
 
-CURRENT_FN_TEST	:=	ft_isalpha
+CURRENT_FUN_TEST	:=	ft_isalpha.test.c
 
 all: $(NAME)
 
 $(NAME):  $(BIN)$(OBJ)
-	@gcc $(FLAGS) $(BIN)$(OBJ)	-o $(NAME)
+	@ar -rcs $(NAME) $(BIN)$(OBJ)
 $(BIN)%.o:%.c  $(BIN)
-	@gcc $(FLAGS) -c $< -o $@
+	@gcc $(FLAGS) -c $< -o $@ -I $(INCLUDE)
 $(BIN):
 	@mkdir $@
 clean:
-	@rm -fd $(BIN)
+	@rm -fdr $(BIN)
 fclean: clean
-
+	@rm -f $(NAME)
 re: fclean all
 
-test:
-
+test: $(NAME)
+	gcc $(FLAGS) $(TEST_DIR)$(CURRENT_FUN_TEST) -o test.o -I $(INCLUDE) -L. $(NAME) 
