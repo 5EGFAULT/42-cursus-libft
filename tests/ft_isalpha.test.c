@@ -1,5 +1,6 @@
 #include "libft.h"
 #include <stdio.h>
+#include <ctype.h> 
 
 #define KRED  "\x1B[31m"
 #define KGRN  "\x1B[32m"
@@ -44,9 +45,21 @@ void     non_digit_letter(){
 
 int     main()
 {
-    lower_letter();
-    upper_letter();
-    non_digit_letter();
+    // lower_letter();
+    // upper_letter();
+    // non_digit_letter();
+		int		i;
+			i = -1;
+			while (i < 530)
+			{
+				if (!!ft_isalpha(i) != !!isalpha(i))
+                {
+                    printf("%d        %d      %d",i,ft_isalpha(i),isalpha(i));    
+                    printERROR("ft_isalpha failed");
+                }
+				i++;
+			}
+					printSucess("ft_isalpha Sucess");
 
 
     return 0;

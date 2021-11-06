@@ -16,15 +16,16 @@ INCLUDE		:= ./
 NAME		:= libft.a
 SRC			:= $(wildcard *.c)
 OBJ			:= $(patsubst %.c,%.o,$(SRC))
+BINS		:= $(addprefix $(BIN),$(OBJ))
 FLAGS		:= -Wall -Wextra -Werror -std=c99
 .PHONY		:  all clean fclean re
 
-CURRENT_FUN_TEST	:=	ft_isalpha.test.c
+CURRENT_FUN_TEST	:=	ft_isprint.test.c
 
 all: $(NAME)
 
-$(NAME):  $(BIN)$(OBJ)
-	@ar -rcs $(NAME) $(BIN)$(OBJ)
+$(NAME): $(BINS)
+	@ar -rcs $(NAME) $(BINS)
 $(BIN)%.o:%.c  $(BIN)
 	@gcc $(FLAGS) -c $< -o $@ -I $(INCLUDE)
 $(BIN):
@@ -35,5 +36,9 @@ fclean: clean
 	@rm -f $(NAME)
 re: fclean all
 
+norm:
+	@norminette $(SRC)
+
 test: $(NAME)
-	gcc $(FLAGS) $(TEST_DIR)$(CURRENT_FUN_TEST) -o test.o -I $(INCLUDE) -L. $(NAME) 
+	@gcc $(FLAGS) $(TEST_DIR)$(CURRENT_FUN_TEST) -o test.o -I $(INCLUDE) -L. $(NAME)
+	@./test.o
