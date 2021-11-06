@@ -37,7 +37,7 @@ fclean: clean
 re: fclean all
 
 norm:
-	@norminette $(SRC)
+	@norminette $(SRC) libft.h
 
 test: $(NAME)
 	@gcc $(FLAGS) $(TEST_DIR)$(CURRENT_FUN_TEST) -o test.o -I $(INCLUDE) -L. $(NAME)
