@@ -6,15 +6,15 @@
 /*   By: asouinia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 15:45:11 by asouinia          #+#    #+#             */
-/*   Updated: 2021/11/03 15:45:16 by asouinia         ###   ########.fr       */
+/*   Updated: 2021/11/06 12:08:37 by asouinia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_isalpha(int  c)
+int	ft_isalpha(int c)
 {
-    if (c >64 && c < 91)
-        return 1;
-    if (c >96 && c < 123)
-        return 1;
-    return 0;
+	if (c > 64 && c < 91)
+		return (1);
+	if (c > 96 && c < 123)
+		return (1);
+	return (0);
 }

@@ -6,14 +6,13 @@
 /*   By: asouinia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 11:13:56 by asouinia          #+#    #+#             */
-/*   Updated: 2021/11/06 11:14:01 by asouinia         ###   ########.fr       */
+/*   Updated: 2021/11/06 12:31:12 by asouinia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int     ft_isprint(int c)
+int	ft_isprint(int c)
 {
-    if (c >=32 && c < 127)
-        return 1;
-    return 0;
+	if (c >= 32 && c < 127)
+		return (1);
+	return (0);
 }

@@ -6,14 +6,13 @@
 /*   By: asouinia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 10:44:14 by asouinia          #+#    #+#             */
-/*   Updated: 2021/11/06 10:44:26 by asouinia         ###   ########.fr       */
+/*   Updated: 2021/11/06 12:32:07 by asouinia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int     ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    if (c >47 && c < 58)
-        return 1;
-    return 0;
+	if (c > 47 && c < 58)
+		return (1);
+	return (0);
 }
