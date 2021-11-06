@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asouinia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 15:51:14 by asouinia          #+#    #+#             */
-/*   Updated: 2021/11/03 16:56:20 by asouinia         ###   ########.fr       */
+/*   Created: 2021/11/06 15:09:19 by asouinia          #+#    #+#             */
+/*   Updated: 2021/11/06 15:09:23 by asouinia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef		LIBFT_H
-#define		LIBFT_H
-#include <stdlib.h>
-#include <string.h>
+#include "libft.h"
 
-int		ft_isalpha(int c);
-int     ft_isdigit(int c);
-int     ft_isalnum(int c);
-int     ft_isascii(int c);
-int     ft_isprint(int c);
-size_t      ft_strlen(const char *s);
-int     ft_toupper(int c);
-int     ft_tolower(int c);
-char *  ft_strchr(const char *s, int c);
-char	*ft_strrchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c)
+{
+	int		i;
+	char	*tmp;
 
-#endif
+	i = 0;
+	tmp = NULL;
+	while (s[i] != '\0')
+	{
+		if ((char) c == s[i])
+			tmp = (char *)(s + i);
+		i++;
+	}
+	if (tmp != NULL)
+		return (tmp);
+	if ((char) c == s[i])
+		return ((char *)(s + i));
+	return (NULL);
+}

@@ -20,7 +20,7 @@ BINS		:= $(addprefix $(BIN),$(OBJ))
 FLAGS		:= -Wall -Wextra -Werror -std=c99
 .PHONY		:  all clean fclean re
 
-CURRENT_FUN_TEST	:=	ft_isprint.test.c
+CURRENT_FUN_TEST	:=	ft_strchr.test.c
 
 all: $(NAME)
 
