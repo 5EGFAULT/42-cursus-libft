@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asouinia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/06 11:34:31 by asouinia          #+#    #+#             */
-/*   Updated: 2021/11/06 12:30:18 by asouinia         ###   ########.fr       */
+/*   Created: 2021/11/07 16:17:19 by asouinia          #+#    #+#             */
+/*   Updated: 2021/11/07 16:17:21 by asouinia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libc.h"
 
-size_t	ft_strlen(const char *s)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t	i;
+	int		i;
+	int		k;
+	int		max;
 
+	max = dstsize;
 	i = -1;
-	while (s[++i])
-		;
-	return (i);
-}
+	while (src[++i] != '\0')
+	{
+	}
+	k = -1;
+	while (++k < max - 1 && k < i)
+		*(dst + k) = src[k];
+	*(dst + k) = '\0';
+	return (iŒŒ);
+	}
