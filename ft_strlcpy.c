@@ -10,22 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libc.h"
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	int		i;
-	int		k;
-	int		max;
+	size_t	i;
+	size_t	k;
 
-	max = dstsize;
 	i = -1;
 	while (src[++i] != '\0')
-	{
-	}
+		;
 	k = -1;
-	while (++k < max - 1 && k < i)
-		*(dst + k) = src[k];
-	*(dst + k) = '\0';
-	return (iŒŒ);
-	}
+	if (dstsize)
+		while (++k < dstsize - 1 && k < i)
+			*(dst + k) = src[k];
+	if (dstsize != 0)
+		*(dst + k) = '\0';
+	return (i);
+}
