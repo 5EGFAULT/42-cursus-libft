@@ -24,7 +24,7 @@ CURRENT_FUN_TEST	:=	ft_memcpy.test.c
 
 all: $(NAME)
 
-$(NAME): $(BINS)
+$(NAME): $(BIN) $(BINS)
 	@ar -rcs $(NAME) $(BINS)
 $(BIN)%.o:%.c  $(BIN)
 	@gcc $(FLAGS) -c $< -o $@ -I $(INCLUDE)
