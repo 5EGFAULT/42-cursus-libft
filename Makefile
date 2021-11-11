@@ -20,7 +20,7 @@ BINS		:= $(addprefix $(BIN),$(OBJ))
 FLAGS		:= -Wall -Wextra -Werror -std=c99
 .PHONY		:  all clean fclean re
 
-CURRENT_FUN_TEST	:=	ft_memcpy.test.c
+CURRENT_FUN_TEST	:=	ft_memmove.test.c
 
 all: $(NAME)
 
@@ -40,5 +40,5 @@ norm:
 	@norminette $(SRC) libft.h
 
 test: $(NAME)
-	@gcc $(FLAGS) $(TEST_DIR)$(CURRENT_FUN_TEST) -o test.o -I $(INCLUDE) -L. $(NAME)
+	@gcc $(FLAGS)  $(TEST_DIR)$(CURRENT_FUN_TEST) -o test.o -I $(INCLUDE) -L. $(NAME)
 	@./test.o
