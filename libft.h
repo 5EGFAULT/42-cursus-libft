@@ -37,5 +37,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 char	*ft_strdup(const char *s1);
 void	*ft_calloc(size_t count, size_t size);
+int		ft_atoi(const char *str);
 
 #endif
