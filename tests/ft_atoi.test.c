@@ -34,8 +34,8 @@ int main()
 
 
 	// size_t nb = -9223372036854775810;
-	//  printf("============> %ld\n", 	LONG_MIN);
-	//  printf("============> %ld\n", LONG_MAX);
+	//  printf("============> %d\n", 	INT_MIN);
+	//  printf("============> %d\n", INT_MAX);
 
 	// long nb = 9223372036854775806;
 
@@ -44,7 +44,11 @@ int main()
 	//memmove(dest, NULL, 2);
 	//   ft_memmove(NULL, NULL, 2);
 	// printf("dest = [%s]\n", dest);
-	printf("==== > [%d]\n", atoi("99999999999999999999999999"));
-	printf("==== > [%d]\n", ft_atoi("99999999999999999999999999"));
+	printf("==== > [%d]\n", atoi("2147483648"));
+	printf("==== > [%d]\n", ft_atoi("2147483648"));
+
+	//* OVERFLOW*/
+	// 2147483648 >> -2147483648 >> sign * -2147483648 >> 2147483648 >> -2147483648
+
 	return (0);
 }
