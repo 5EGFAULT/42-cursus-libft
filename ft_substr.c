@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asouinia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/13 22:15:07 by asouinia          #+#    #+#             */
-/*   Updated: 2021/11/13 22:15:09 by asouinia         ###   ########.fr       */
+/*   Created: 2021/11/13 23:30:20 by asouinia          #+#    #+#             */
+/*   Updated: 2021/11/13 23:30:21 by asouinia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int	i;
-	int	j;
+	char	*res;
+	int		i;
 
-	i = 0;
-	j = 0;
-	while (haystack[i + j] && needle[j] && (size_t)(i + j) < len)
-	{
-		if (needle[j] == haystack[i + j])
-			j++;
-		else
-		{
-			j = 0;
-			++i;
-		}				
-	}
-	if (!needle[j])
-		return ((char *)(haystack + i));
-	return (0);
+	i = -1;
+	res = (char *)malloc(len + 1);
+	if (!(res))
+		return (0);
+	if (s && start < ft_strlen(s))
+		while (s[++i + start] && (size_t) i < len)
+			res[i] = s[i + start];
+	res[i] = '\0';
+	return (res);
 }
