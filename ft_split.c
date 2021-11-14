@@ -10,4 +10,35 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+char **ft_split(char const *s, char c)
+{
+	int i;
+	int len2;
+	char *trimed_s;
+
+	i = -1;
+	trimed_s = ft_strtrim(s,&c);
+
+	while (s[i])
+	return (NULL);
+}
+
+char	**empty_2d_array(char *s,char c)
+{
+	int i;
+	int len2;
+	char *trimed_s;
+	char *set;
+
+	*set = ft_strdup(" ");
+	*set = c;
+	i = -1;
+	len2 = 0;
+	trimed_s = ft_strtrim(s,&c);
+	while (trimed_s[++i] && )
+	{
+
+	}
+}
