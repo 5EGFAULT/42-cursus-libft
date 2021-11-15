@@ -17,10 +17,10 @@ NAME		:= libft.a
 SRC			:= $(wildcard *.c)
 OBJ			:= $(patsubst %.c,%.o,$(SRC))
 BINS		:= $(addprefix $(BIN),$(OBJ))
-FLAGS		:= -Wall -Wextra -Werror -std=c99
+FLAGS		:= -Wall -Wextra -Werror
 .PHONY		:  all clean fclean re
 
-CURRENT_FUN_TEST	:=	ft_strtrim.test.c
+CURRENT_FUN_TEST	:=	ft_split.test.c
 
 all: $(NAME)
 
