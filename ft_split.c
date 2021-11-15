@@ -20,6 +20,8 @@ char	**ft_split(char const *s, char c)
 {
 	char	**splited;
 
+	if (!s)
+		return (0);
 	splited = empty_2d_array(s, c);
 	if (!splited)
 		return ((char **)0);

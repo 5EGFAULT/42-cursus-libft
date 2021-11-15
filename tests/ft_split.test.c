@@ -58,14 +58,13 @@ int     main()
 // empty_2d_array("   my name is   ",' ');
 
     char **s;
-    char *ss = "olol                     ";
+    char *ss = " olol        olol       olol     olol ";
     int i;
     i = -1;
-    s = ft_split(ss,' ');
+    s = ft_split(ss,'r');
     while (s && s[++i])
     {
         printf("|%s|\n",s[i]);
     }
-    
     return 0;
 }
