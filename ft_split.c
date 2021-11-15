@@ -67,7 +67,7 @@ int	fill_2d_array(char const *s, char c, char **splited)
 			j = -1;
 			while (s[i + ++j] && s[i + j] != c)
 				;
-			splited[++k] = (char *)malloc(j);
+			splited[++k] = (char *)malloc(j + 1);
 			if (!splited[k])
 				return (0);
 			j = -1;
