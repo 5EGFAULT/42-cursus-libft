@@ -28,10 +28,9 @@ char	*ft_itoa(int n)
 	i = -1;
 	tmp = n;
 	if (n < 0)
-	{
 		str[++i] = '-';
+	if (n < 0)
 		tmp *= -1;
-	}
 	while (++i < length)
 	{
 		if (n < 0)
