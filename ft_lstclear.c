@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+#include <stdio.h>
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*tmp1;
@@ -24,6 +24,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	{
 		tmp2 = tmp1;
 		tmp1 = tmp1->next;
+		// printf("|%s|\n", (*tmp2)->content);
 		ft_lstdelone(tmp2, del);
 	}
 	free(lst);
