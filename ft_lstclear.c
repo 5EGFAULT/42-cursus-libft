@@ -14,18 +14,14 @@
 #include <stdio.h>
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list	*tmp1;
-	t_list	*tmp2;
+	t_list	*tmp;
 
 	if (!lst)
 		return ;
-	tmp1 = *lst;
-	while (tmp1)
+	while (*lst)
 	{
-		tmp2 = tmp1;
-		tmp1 = tmp1->next;
-		// printf("|%s|\n", (*tmp2)->content);
-		ft_lstdelone(tmp2, del);
+		tmp = *lst;
+		*lst = (*lst)->next;
+		ft_lstdelone(tmp, del);
 	}
-	free(lst);
 }
